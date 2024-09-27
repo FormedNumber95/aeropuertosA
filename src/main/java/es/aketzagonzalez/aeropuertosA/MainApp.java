@@ -1,5 +1,15 @@
 package es.aketzagonzalez.aeropuertosA;
 
+import javafx.fxml.FXML;
+
+/*@FXML
+    void initialize() {
+    	lstDeportes.getItems().addAll("Tenis","Fútbol","Baloncesto","Natación","Ciclismo","Otro");
+    	cmbEdad.getItems().addAll("Menores de 18","Entre 18 y 30","Entre 31 y 50","Entre 51 y 70","Mayores de 70");
+    }
+    */
+
+
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,13 +19,7 @@ import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-/*
-@FXML
-void initialize() {
-	lstDeportes.getItems().addAll("Tenis","Fútbol","Baloncesto","Natación","Ciclismo","Otro");
-	cmbEdad.getItems().addAll("Menores de 18","Entre 18 y 30","Entre 31 y 50","Entre 51 y 70","Mayores de 70");
-}
-*/
+
 public class MainApp extends Application {
     private static Stage stage;
 

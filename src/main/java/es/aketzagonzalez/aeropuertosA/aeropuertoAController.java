@@ -7,7 +7,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.RadioButton;
-import javafx.scene.control.ScrollPane;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -21,13 +21,13 @@ public class aeropuertoAController {
     private Button btnCancelar;
 
     @FXML
-    private RadioButton btnHombre;
+    private RadioButton radBtnHombre;
 
     @FXML
-    private RadioButton btnMujer;
+    private RadioButton radBtnMujer;
 
     @FXML
-    private RadioButton btnOtro;
+    private RadioButton radBtnOtro;
 
     @FXML
     private CheckBox chkDeporte;
@@ -40,8 +40,6 @@ public class aeropuertoAController {
 
     @FXML
     private ListView<String> lstDeportes;
-    @FXML
-    private ScrollPane scrollDeportes;
 
     @FXML
     private Slider sliderCine;
@@ -65,18 +63,32 @@ public class aeropuertoAController {
     
     @FXML
     void accionCancelar(ActionEvent event) {
-    	
+    	txtNumHermanos.setText("");
+    	txtProfesion.setText("");
+    	chkDeporte.setSelected(false);
+    	sliderCine.setValue(5);
+    	sliderCompra.setValue(5);
+    	sliderTelevison.setValue(5);
+    	radBtnHombre.setSelected(false);
+    	radBtnMujer.setSelected(false);
+    	radBtnOtro.setSelected(false);
     }
 
     @FXML
     void acionPracticarDeporte(ActionEvent event) {
-
+    	if(chkDeporte.isSelected()) {
+    		lstDeportes.setDisable(false);
+    	}
+    	else {
+    		lstDeportes.setDisable(true);
+    	}
     }
     
     @FXML
     void initialize() {
     	lstDeportes.getItems().addAll("Tenis","Fútbol","Baloncesto","Natación","Ciclismo","Otro");
     	cmbEdad.getItems().addAll("Menores de 18","Entre 18 y 30","Entre 31 y 50","Entre 51 y 70","Mayores de 70");
+    	//hacer que se pueda elegir mas de una opcion de la lista
     }
 
 }
