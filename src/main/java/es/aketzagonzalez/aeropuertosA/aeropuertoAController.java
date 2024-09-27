@@ -33,14 +33,13 @@ public class aeropuertoAController {
     private CheckBox chkDeporte;
 
     @FXML
-    private ComboBox<?> cmbEdad;
+    private ComboBox<String> cmbEdad;
 
     @FXML
     private ToggleGroup grupoSexo;
 
     @FXML
-    private ListView<?> lstDeportes;
-
+    private ListView<String> lstDeportes;
     @FXML
     private ScrollPane scrollDeportes;
 
@@ -63,15 +62,21 @@ public class aeropuertoAController {
     void accionAceptar(ActionEvent event) {
 
     }
-
+    
     @FXML
     void accionCancelar(ActionEvent event) {
-
+    	
     }
 
     @FXML
     void acionPracticarDeporte(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void initialize() {
+    	lstDeportes.getItems().addAll("Tenis","Fútbol","Baloncesto","Natación","Ciclismo","Otro");
+    	cmbEdad.getItems().addAll("Menores de 18","Entre 18 y 30","Entre 31 y 50","Entre 51 y 70","Mayores de 70");
     }
 
 }

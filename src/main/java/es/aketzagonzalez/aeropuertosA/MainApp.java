@@ -1,21 +1,30 @@
 package es.aketzagonzalez.aeropuertosA;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
-
+/*
+@FXML
+void initialize() {
+	lstDeportes.getItems().addAll("Tenis","Fútbol","Baloncesto","Natación","Ciclismo","Otro");
+	cmbEdad.getItems().addAll("Menores de 18","Entre 18 y 30","Entre 31 y 50","Entre 51 y 70","Mayores de 70");
+}
+*/
 public class MainApp extends Application {
     private static Stage stage;
 
     @Override
     public void start(@SuppressWarnings("exports") Stage s) throws IOException {
         stage=s;
-        setRoot("primary","");
+        stage.setMinHeight(453);
+        stage.setMinWidth(600);
+        setRoot("aeropuertoA","");
     }
 
     static void setRoot(String fxml) throws IOException {
